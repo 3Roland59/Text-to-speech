@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     outline: none;
+    font-family: sans-serif !important;
 }
 
 :root{
@@ -12,8 +13,8 @@
     --green: #00ff00;
     --yellow: #ffee00;
     --bg: #000;
-    --txt: #a1a1a1;
-    --cont: #ffffff6c;
+    --txt: #7c7c7c;
+    --cont: #ffffff;
 }
 
 body{
@@ -28,7 +29,7 @@ body{
 }
 
 h1{
-    font-family: Tahoma;
+    font-family: sans-serif;
     position: fixed;
     top: 30px;
     color: #fff;
@@ -42,14 +43,17 @@ span{
 }
 
 .container{
-    position: relative;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     height: 400px;
     border-radius: 10px;
     padding: 20px;
     display: grid;
     grid-template-rows: 60% 15% 15%;
     gap: 5%;
-    background: var(--cont);
+    /* background: var(--cont); */
 }
 
 .speed{
@@ -64,7 +68,7 @@ span{
     border-radius: 5px;
 }
 
-.red, .blue, .yellow, .green{
+/* .red, .blue, .yellow, .green{
     width: 10rem;
     height: 10rem;
     border: none;
@@ -80,34 +84,28 @@ span{
 
 .yellow, .green{
     animation: anim1 5s ease-in-out infinite;
-}
+} */
 
-@keyframes anim{
+/* @keyframes anim{
     0%{
-        /* transform: scale(1); */
         top: -20%;
     }
     50%{
-        /* transform: scale(1); */
         top: 78%;
     }
     100%{
-        /* transform: scale(1); */
         top: -20%;
     }
 }
 
 @keyframes anim1{
     0%{
-        /* transform: scale(1); */
         right: -19%;
     }
     50%{
-        /* transform: scale(1); */
         right: 70%;
     }
     100%{
-        /* transform: scale(1); */
         right: -19%;
     }
 }
@@ -136,7 +134,7 @@ span{
     box-shadow: 0 0 10px 10px var(--green);
     bottom: -22%;
     animation-delay: 2.5s;
-}
+} */
 
 .sped{
     display: flex;
@@ -148,25 +146,26 @@ button, .sped{
     min-width: 50px;
     font-family: sans-serif;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     border-radius: 5px;
-    border: none;
-    color: #fff;
-    background: var(--bg);
+    border: 2px solid var(--bg);
+    color: var(--bg);
+    background: var(--cont);
 }
 
 button:hover{
-    color: var(--bg);
-    background: #fff;
+    color: var(--cont);
+    background: var(--bg);
 }
 
 textarea{
     resize: none;
     border-radius: 10px;
-    padding: 10px;
+    padding: 15px;
     font-family: sans-serif;
+    font-size: 1rem;
     letter-spacing: 1.2px;
-    background: var(--bg);
+    background: var(--cont);
     color: var(--txt);
     border: none;
 }
@@ -174,18 +173,16 @@ textarea{
 @media (max-width: 480px) {
     h1{
         top: 50px;
-        transform: scale(0.7);
+        transform: scale(0.);
     }
 
     .container{
         height: 60%;
         padding: 20px;
-        grid-template-rows: 70% 10% 10%;
-        gap: 5%;
         width: 90%;
     }
     
     button, .sped{
-        font-size: 1.3rem;
+        font-size: 1rem;
     }
 }
